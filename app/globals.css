@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Brand Colors */
+  --primary: 174 77% 56%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 270 91% 65%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 142 71% 45%;
+  --accent-foreground: 0 0% 100%;
+  
+  /* UI Colors */
+  --background: 0 0% 100%;
+  --foreground: 224 71% 4%;
+  --card: 0 0% 100%;
+  --card-foreground: 224 71% 4%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 224 71% 4%;
+  --muted: 220 14% 96%;
+  --muted-foreground: 220 9% 46%;
+  --border: 220 13% 91%;
+  --input: 220 13% 91%;
+  --ring: 174 77% 56%;
+  
+  /* Status Colors */
+  --success: 142 71% 45%;
+  --success-foreground: 0 0% 100%;
+  --warning: 38 92% 50%;
+  --warning-foreground: 0 0% 100%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 0 0% 100%;
+  
+  /* Chart Colors */
+  --chart-1: 174 77% 56%;
+  --chart-2: 270 91% 65%;
+  --chart-3: 142 71% 45%;
+  --chart-4: 38 92% 50%;
+  --chart-5: 0 72% 51%;
+  
+  --radius: 1rem;
+}
+
+.dark {
+  /* Brand Colors - Dark Mode */
+  --primary: 174 77% 56%;
+  --primary-foreground: 224 71% 4%;
+  --secondary: 270 91% 65%;
+  --secondary-foreground: 224 71% 4%;
+  --accent: 142 71% 45%;
+  --accent-foreground: 224 71% 4%;
+  
+  /* UI Colors - Dark Mode */
+  --background: 224 71% 4%;
+  --foreground: 210 20% 98%;
+  --card: 224 63% 6%;
+  --card-foreground: 210 20% 98%;
+  --popover: 224 63% 6%;
+  --popover-foreground: 210 20% 98%;
+  --muted: 215 28% 17%;
+  --muted-foreground: 217 10% 64%;
+  --border: 215 28% 17%;
+  --input: 215 28% 17%;
+  --ring: 174 77% 56%;
+  
+  /* Status Colors - Dark Mode */
+  --success: 142 71% 45%;
+  --success-foreground: 224 71% 4%;
+  --warning: 38 92% 50%;
+  --warning-foreground: 224 71% 4%;
+  --destructive: 0 72% 51%;
+  --destructive-foreground: 210 20% 98%;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-inter;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-poppins font-semibold;
+  }
+}
+
+@layer utilities {
+  .font-inter {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-poppins {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+  }
+  
+  .gradient-card {
+    background: linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--muted)) 100%);
+  }
+  
+  .glass-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .dark .glass-card {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+}
